@@ -70,8 +70,7 @@ int main()
 
 					if( mainPlayer.isDead() )
 					{
-						mainPlayer.gameover();
-						done = true;
+						done = mainPlayer.gameover();
 						break;
 					}
 				}

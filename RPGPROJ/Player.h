@@ -27,7 +27,7 @@ public:
 	void rest();
 	void viewStats();
 	void victory(int xp);
-	void gameover();
+	bool gameover();
 	void displayHitPoints();
  
 private:

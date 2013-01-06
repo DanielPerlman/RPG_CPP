@@ -100,6 +100,6 @@ Monster* Map::checkRandomEncounter()
 
 void Map::printPlayerPos()
 {
-	cout << "Player Position = (" << mPlayerXPos << ", " 
-		<< mPlayerYPos << ")" << endl << endl;
+	cout << "\nPlayer Position = (" << mPlayerXPos << ", " 
+		<< mPlayerYPos << ")\n\n";
 }

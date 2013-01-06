@@ -39,15 +39,15 @@ void Player::gainGold(int goldReward){
 }
 void Player::createClass()
 {
-	cout << "CHARACTER CLASS GENERATION" << endl;
-	cout << "==========================" << endl;
+	cout << "\nCHARACTER CLASS GENERATION\n";
+	cout << "==========================\n";
 
 	// Input character's name.
 	cout << "Enter your character's name: ";
 	getline(cin, mName);
 
 	// Character selection.
-	cout << "Please select a character class number..."<< endl;	
+	cout << "\nPlease select a character class number...\n";	
 	cout << "1)Fighter 2)Mage 3)Cleric 4)Thief : ";	
 
 	int characterNum = 1;	
@@ -110,11 +110,11 @@ void Player::createClass()
 	}
 }
 void Player::createRace(){
-	cout << "RACE GENERATION" << endl;
-	cout << "===============" << endl;
+	cout << "\nRACE GENERATION\n";
+	cout << "===============\n";
 
-	cout << "Pick a race! : " << endl;
-	cout << " 1) Human 2) Elf 3) Dwarf 4) Minotaur 5) Undead 6) Goblin 7) Random : /n";
+	cout << "Pick a race! : \n";
+	cout << " 1) Human 2) Elf 3) Dwarf 4) Minotaur 5) Undead 6) Goblin 7) Random : ";
 	int choice = 0;
 	cin >> choice;
 	if(choice == 7){
@@ -129,6 +129,7 @@ void Player::createRace(){
 		mArmor		  += 1;
 		mWeapon.mDamageRange.mLow += 1;
 		mWeapon.mDamageRange.mHigh+= 1;
+        cout << "\nYou are a Human\n";
 		break;
 	case 2:
 		mRaceName      = "Elf";
@@ -136,6 +137,7 @@ void Player::createRace(){
 		mMaxHitPoints -= 2;
 		mAccuracy	  += 3;
 		mArmor		  += 1;
+        cout << "\nYou are an Elf\n";
 		break;
 	case 3:
 		mRaceName	   = "Dwarf";
@@ -143,6 +145,7 @@ void Player::createRace(){
 		mMaxHitPoints += 4;
 		mAccuracy	  -= 4;
 		mArmor		  += 2;
+        cout << "\nYou are a Dwarf\n";
 		break;
 	case 4: 
 		mRaceName	   = "Minotaur";
@@ -152,6 +155,7 @@ void Player::createRace(){
 		mAccuracy	  -= 4;
 		mWeapon.mDamageRange.mLow -= 2;
 		mWeapon.mDamageRange.mHigh-= 2;
+        cout << "\nYou are a Minotaur\n";
 		break;
 	case 5:
 		mRaceName	   = "Undead";
@@ -161,16 +165,18 @@ void Player::createRace(){
 		mAccuracy	  -= 2;
 		mWeapon.mDamageRange.mLow += 4;
 		mWeapon.mDamageRange.mHigh+= 4;
+        cout << "\nYou are Undead\n";
 		break;
 	case 6:
 		mRaceName	   = "Goblin";
 		mArmor		  += 4;
 		mAccuracy	  -= 2;
+        cout << "\nYou are a Goblin\n";
 		break;
 	case 7:
 		break;
 	default:
-		cout << "Error: wrong number chosen, try again : \n";
+		cout << "Error: wrong number chosen, try again : ";
 		createRace();
 		break;
 	}
@@ -270,8 +276,8 @@ void Player::rest()
 
 void Player::viewStats()
 {
-	cout << "PLAYER STATS" << endl;
-	cout << "============" << endl;
+	cout << "\nPLAYER STATS\n";
+	cout << "============\n";
 	cout << endl;
 
 	cout << "Name            = " << mName         << endl;
@@ -286,7 +292,7 @@ void Player::viewStats()
 	cout << "Weapon Name     = " << mWeapon.mName << endl;
 	cout << "Weapon Damage   = " << mWeapon.mDamageRange.mLow << "-" <<
 		mWeapon.mDamageRange.mHigh << endl;
-	cout << "Gold			 = " << mGold		  << endl;
+	cout << "Gold            = " << mGold         << endl;
 
 	cout << endl;
 	cout << "END PLAYER STATS" << endl;
@@ -303,16 +309,23 @@ void Player::victory(int xp)
 	mExpPoints += xp;
 }
 
-void Player::gameover()
+bool Player::gameover()
 {
 	cout << "You died in battle..." << endl;
 	cout << endl;
 	cout << "================================" << endl;
 	cout << "GAME OVER!" << endl;
 	cout << "================================" << endl;
-	cout << "Press 'q' to quit: ";
-	char q = 'q';
+	cout << "Press 'r' to restart or any key to quit: ";
+	char q = 'r';
 	cin >> q;
+    if (q == 'r') {
+        mGold = (int)(mGold / 2);
+        return false;
+    } else {
+        return true;
+    }
+
 	cout << endl;
 }
 
