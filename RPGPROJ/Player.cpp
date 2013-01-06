@@ -67,6 +67,7 @@ void Player::createClass()
 		mWeapon.mName = "Long Sword";
 		mWeapon.mDamageRange.mLow  = 4;
 		mWeapon.mDamageRange.mHigh = 10;
+        cout << "\nYou are a Fighter!\n";
 		break;
 	case 2:  // Wizard
 		mClassName    = "Mage";
@@ -80,6 +81,7 @@ void Player::createClass()
 		mWeapon.mName = "Staff";
 		mWeapon.mDamageRange.mLow  = 1;
 		mWeapon.mDamageRange.mHigh = 4;
+        cout << "\nYou are a Wizard!\n"
 		break;
 	case 3:  // Cleric
 		mClassName    = "Cleric";
@@ -93,6 +95,7 @@ void Player::createClass()
 		mWeapon.mName = "Flail";
 		mWeapon.mDamageRange.mLow  = 3;
 		mWeapon.mDamageRange.mHigh = 9;
+        cout << "\nYou are a Cleric!\n";
 		break;
 	default: // Thief
 		mClassName    = "Thief";
@@ -106,6 +109,7 @@ void Player::createClass()
 		mWeapon.mName = "Short Sword";
 		mWeapon.mDamageRange.mLow  = 4;
 		mWeapon.mDamageRange.mHigh = 6;
+        cout << "\nYou are a Thief!\n";
 		break;
 	}
 }
