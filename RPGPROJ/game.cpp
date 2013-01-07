@@ -15,6 +15,7 @@ int main()
 
 	Player mainPlayer;
 
+    mainPlayer.playerName();
 	mainPlayer.createClass();
 	mainPlayer.createRace();
 	// Begin adventure.
@@ -29,6 +30,9 @@ int main()
 		int selection = 1;
 		cout << "1) Move, 2) Rest, 3) View Stats, 4) Quit: ";
 		cin >> selection;
+
+        // TODO: Sanitize 'selection' so ';' and other things wont
+        // cause it to crash.
 
 		Monster* monster = 0;
 		switch( selection )

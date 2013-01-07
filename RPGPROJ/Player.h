@@ -18,6 +18,7 @@ public:
 
 	int  getArmor();
 
+    void playerName();
 	void takeDamage(int damage);
 	void gainGold(int goldReward);
 	void createClass();
