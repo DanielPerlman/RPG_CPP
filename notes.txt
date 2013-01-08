@@ -1,0 +1,4 @@
+add save option
+use points in main game loop
+improve combat and monster class
+
