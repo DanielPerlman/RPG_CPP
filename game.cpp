@@ -34,7 +34,7 @@ int main()
 		switch( selection )
 		{
 		case 1:
-			gameMap.movePlayer();
+			gameMap.movePlayer(mainPlayer);
 
 			// Check for a random encounter.  This function
 			// returns a null pointer if no monsters are
@@ -96,7 +96,7 @@ int main()
 		
 		case 5:
 			if(outFile){
-			mainPlayer.save(outfile*);
+			mainPlayer.save(outFile);
 			}	
 			break;
 		}	

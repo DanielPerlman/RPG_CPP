@@ -5,6 +5,7 @@
 
 #include "Weapon.h"
 #include "Monster.h"
+#include "Player.h"
 #include <string>
 
 class Map
@@ -16,7 +17,7 @@ public:
 	// Methods
 	int  getPlayerXPos();
 	int  getPlayerYPos();
-	void movePlayer();
+	void movePlayer(Player& player);
 	Monster* checkRandomEncounter();
 	void printPlayerPos();
 

@@ -22,7 +22,7 @@ int  Map::getPlayerYPos()
 	return mPlayerYPos;
 }
 
-void Map::movePlayer()
+void Map::movePlayer(Player& player)
 {
 	int selection = 1;
 	cout << "1) North, 2) East, 3) South, 4) West: ";
@@ -33,15 +33,19 @@ void Map::movePlayer()
 	{
 	case 1: // North
 		mPlayerYPos++;
+		player.move(0,1);
 		break;
 	case 2: // East
 		mPlayerXPos++;
+		player.move(1,0);
 		break;
 	case 3: // South
 		mPlayerYPos--;
+		player.move(0,-1);
 		break;
 	default: // West
 		mPlayerXPos--;
+		player.move(-1,0);
 		break;
 	}
 	cout << endl;
